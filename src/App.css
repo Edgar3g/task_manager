@@ -1,6 +1,6 @@
 .App
 {
-    width: 40%;
+    width: 45%;
     margin: 2em auto;
     background: #333;
     border-radius: 5px;
@@ -12,4 +12,37 @@
     padding: 0.5em;
     border-bottom: 1px solid #332;
     text-align: center;
+}
+
+.form-task{
+    padding: 1em;
+    margin: 0 2em;
+    border-bottom: 1px solid #9927e6ee;
+}
+
+.form-task h3,
+.list-task h3{
+    text-align: center;
+    margin-bottom: 1.2em;
+    padding: .5em;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form-control label{
+    font-weight: bold;
+    font-size: .6em;
+    margin-bottom: .7em;
+}
+
+.form-control input{
+    border: 1px solid #9927e6ee;
+    border-radius: 3px;
+    background: #efefee;
+    padding: .8em;
+    color: #3333
 }
