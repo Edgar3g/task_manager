@@ -1,0 +1,15 @@
+.App
+{
+    width: 40%;
+    margin: 2em auto;
+    background: #333;
+    border-radius: 5px;
+    color: #ddd;
+}
+
+
+.task-header{
+    padding: 0.5em;
+    border-bottom: 1px solid #332;
+    text-align: center;
+}
