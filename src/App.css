@@ -42,7 +42,22 @@
 .form-control input{
     border: 1px solid #9927e6ee;
     border-radius: 3px;
-    background: #efefee;
+    background: #2d2b31;
     padding: .8em;
-    color: #3333
+    color: #dbdbdb;
+}
+
+input[type="submit"]{
+    background: #9927e6ee;
+    color: #eee;
+    display: block;
+    width: 100%;
+    border: 1px solid #9927e6ee;
+    border-radius: 5px;
+    padding: 1em;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background: #27e667ee;
+    transition: .5s ease;
 }
