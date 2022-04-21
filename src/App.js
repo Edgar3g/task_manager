@@ -1,6 +1,6 @@
 import './App.css';
 
-import {useState, useEffec} from 'react'
+import {useState, useEffect} from 'react'
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs"
 
 const API = "http://localhost:3004";
@@ -14,9 +14,28 @@ function App() {
   const [tasks, setTasks] = useState([])
   const [loading, setLoading] = useState(false)
   
-  // 
-  function handleSubmit(e)
+  // Load task on page
+  useEffect(() => {
+
+    const loadData = async() =>{
+
+      setLoading(true)
+
+      const res = await fetch(API + "/todos")
+        .then((res) => res.json())
+        .then((data) => data)
+        .catch((err) => console.log(err))
+      
+      setLoading(false)
+      setTasks(res)   
+    }
+  })
+
+  // send data to backend 
+  const handleSubmit = async (e) =>
   {
+    
+    e.preventDefault()
 
     const task = {
       id: Math.random(),
@@ -25,7 +44,15 @@ function App() {
       done: false,
     }
 
-    e.preventDefault()
+    await fetch(API + "/tasks", {
+      method: "POST",
+      body: JSON.stringify(task),
+      headers: {
+        "Content-type": "application/json"
+      },
+    })
+    
+    
     console.log(task)
     setTitle("")
     setTime("")
@@ -62,7 +89,7 @@ function App() {
             />
           </div>
 
-          <button>Registrar Tarefa</button>
+          <input type="submit" value="Registar Tarefa"/>
         </form>
       </div>
 
